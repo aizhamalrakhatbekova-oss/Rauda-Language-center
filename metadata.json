@@ -1,0 +1,8 @@
+{
+  "name": "Рауда Тил Борбору",
+  "description": "Рауда тил борборунун расмий веб-сайты. Куран окуу, араб тили, англис тили жана тафсир сабактары заманбап ыкмада.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

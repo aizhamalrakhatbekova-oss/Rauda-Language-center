@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-arabic: "Amiri", serif;
+  
+  --color-brand-navy: #172554;
+  --color-brand-blue: #1E3A8A;
+  --color-brand-teal: #0D9488;
+  --color-brand-teal-light: #0F766E;
+  --color-brand-cyan: #0EA5E9;
+  --color-brand-gold: #B45309;
+  --color-brand-gold-light: #FEF3C7;
+
+  /* Premium Dark Mode Palette */
+  --color-dark-indigo-deep: #030712;
+  --color-dark-indigo-surface: #071124;
+  --color-dark-indigo-card: #0e1b35;
+  --color-dark-teal-border: rgba(13, 148, 136, 0.25);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply antialiased bg-white text-slate-800 transition-colors duration-300;
+  }
+}
+
+/* Custom Islamic patterned background ornament details */
+.islamic-grid-pattern {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(13, 148, 136, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Elegant custom shadows for premium components */
+.premium-shadow {
+  box-shadow: 
+    0 10px 30px -10px rgba(15, 30, 54, 0.08),
+    0 1px 3px rgba(15, 30, 54, 0.02);
+}
+
+.premium-glow-teal {
+  box-shadow: 
+    0 20px 40px -15px rgba(20, 184, 166, 0.15);
+}
+
+/* Scrollbar styling for smooth interactions */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(13, 148, 136, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 148, 136, 0.3);
+}
+
+/* ==========================================================
+   ELEGANT PREMIUM DARK MODE STYLES
+   ========================================================== */
+html.dark {
+  background-color: var(--color-dark-indigo-deep);
+  color: #f1f5f9;
+}
+
+/* Page Root & Grid pattern */
+html.dark .islamic-grid-pattern {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(13, 148, 136, 0.08) 1px, transparent 0) !important;
+  background-size: 24px 24px;
+}
+
+/* Base Body Override */
+html.dark body {
+  background-color: var(--color-dark-indigo-deep) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Theme Toggle spin-slow animation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+/* Primary Backgrounds Map to Deep Navy & Ocean Surface */
+html.dark .bg-white {
+  background-color: var(--color-dark-indigo-surface) !important;
+}
+
+html.dark .bg-white\/80 {
+  background-color: rgba(3, 7, 18, 0.85) !important;
+}
+
+html.dark .bg-white\/95 {
+  background-color: rgba(7, 17, 36, 0.95) !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-slate-50\/50,
+html.dark .bg-slate-50\/60 {
+  background-color: var(--color-dark-indigo-deep) !important;
+}
+
+html.dark .bg-slate-100 {
+  background-color: var(--color-dark-indigo-card) !important;
+}
+
+/* Glowing Auroras in Dark Mode */
+html.dark .bg-sky-50 {
+  background-color: rgba(13, 148, 136, 0.06) !important;
+  filter: blur(120px) !important;
+}
+
+html.dark .bg-teal-50,
+html.dark .bg-teal-50\/20,
+html.dark .bg-teal-50\/60 {
+  background-color: rgba(13, 148, 136, 0.04) !important;
+}
+
+/* Solid Buttons & Soft Blue / Teal Text Mapping */
+html.dark .text-brand-navy {
+  color: #ffffff !important;
+}
+
+html.dark .text-brand-blue {
+  color: #2dd4bf !important; /* Glowing teal text in dark mode */
+}
+
+html.dark .bg-brand-blue {
+  background-color: #0d9488 !important; /* Teal button accent */
+}
+
+html.dark .hover\:bg-brand-blue:hover {
+  background-color: #0f766e !important;
+}
+
+/* Standard Slate Typography Overrides */
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700,
+html.dark .text-black {
+  color: #e2e8f0 !important;
+}
+
+html.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-500,
+html.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-slate-350 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-300 {
+  color: #cbd5e1 !important;
+}
+
+/* Border & Divider Overrides with precise teal accents */
+html.dark .border-slate-100,
+html.dark .border-slate-150,
+html.dark .border-slate-200,
+html.dark .border-slate-150\/60,
+html.dark .border-slate-250 {
+  border-color: var(--color-dark-teal-border) !important;
+}
+
+/* Interactive form inputs */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: var(--color-dark-indigo-card) !important;
+  border-color: var(--color-dark-teal-border) !important;
+  color: #ffffff !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #475569 !important;
+}
+
+html.dark select option {
+  background-color: var(--color-dark-indigo-card);
+  color: #ffffff;
+}
+
+/* Section styling specificity to maintain contrast */
+html.dark section.bg-white {
+  background-color: var(--color-dark-indigo-deep) !important;
+}
+
+/* Secondary cards in Lists (e.g. course list) */
+html.dark .bg-slate-50\/50 {
+  background-color: var(--color-dark-indigo-card) !important;
+}
+
+/* Modal overlays, slide-overs, and popups */
+html.dark .bg-black\/50,
+html.dark .bg-slate-900\/50,
+html.dark .bg-slate-950\/20 {
+  background-color: rgba(2, 6, 23, 0.8) !important;
+}
+
+/* Drawer / Course Explorer panel background */
+html.dark .w-screen.max-w-2xl {
+  background-color: var(--color-dark-indigo-surface) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Card inside list of explorer */
+html.dark .bg-white.shadow.text-brand-teal {
+  background-color: var(--color-dark-indigo-card) !important;
+  color: #2dd4bf !important;
+}
+
+/* Reviews and testimonials rating/check labels */
+html.dark .text-teal-600 {
+  color: #2dd4bf !important;
+}
+
+/* Scrollbar adjustment for dark mode */
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(45, 212, 191, 0.25) !important;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 212, 191, 0.45) !important;
+}
+
+/* Subtle glowing effect */
+html.dark .premium-shadow {
+  box-shadow: 
+    0 10px 40px -15px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(13, 148, 136, 0.05) !important;
+}
+
+/* Static maps or frames override for dark mode */
+html.dark iframe {
+  filter: grayscale(0.9) invert(0.93) contrast(1.1) brightness(0.92);
+}
+
